@@ -147,3 +147,7 @@ footer{height:70px;border-top:1px solid var(--line);display:flex;align-items:cen
 .rest-intro{color:var(--mint);font-size:18px;line-height:1.5;max-width:1000px;margin:12px 0 8px}.rest-intro>span{color:var(--yellow)}
 @media(min-width:751px) and (max-height:850px){.agreement-layout{gap:24px;padding:16px 0}.agreement-contract{padding:22px}.agreement-contract>div{margin-top:16px;padding-top:14px}.agreement-party p{font-size:16px}.rest-intro{font-size:17px}}
 @media(max-width:750px){.agreement-layout{grid-template-columns:1fr;gap:16px}.agreement-party:last-child{padding-left:0}.agreement-party h2{margin:10px 0}.agreement-party p{margin:8px 0;font-size:16px}.rest-intro{font-size:16px}nav{gap:0}.dot{padding:8px 5px}#counter{font-size:10px;letter-spacing:0}}
+
+.contract-visual{flex:1;display:flex;align-items:center;padding:24px 0;min-width:0}
+.contract-visual svg{display:block;width:100%;height:auto}
+@media(max-width:750px){.contract-visual{overflow-x:auto;min-height:300px}.contract-visual svg{min-width:660px}}
