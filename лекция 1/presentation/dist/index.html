@@ -66,7 +66,7 @@
         <dl class="request-definitions">
           <div><dt>POST — метод</dt><dd>Отправляет данные для обработки, например для создания пользователя.</dd></div>
           <div><dt>localhost:8000 — адрес сервера</dt><dd>К нему отправляем запрос. Здесь сервер работает на нашем компьютере, на порту 8000.</dd></div>
-          <div><dt>/users — путь</dt><dd>Указывает ресурс, к которому обращаемся: здесь — пользователи.</dd></div>
+          <div><dt>/users — путь запроса</dt><dd>Указывает серверу, к какой части приложения мы обращаемся. В данном случае — к работе с пользователями.</dd></div>
           <div><dt>Body — тело запроса</dt><dd>Данные, которые передаём серверу. Тело используют не во всех запросах: GET обычно отправляют без него.</dd></div>
         </dl>
     </div>
@@ -111,7 +111,7 @@
     <div class="status-grid">
       <article><span class="status-code">200</span><div><h2>OK</h2><p>Запрос выполнен успешно</p></div><code>GET /users/42</code></article>
       <article><span class="status-code">201</span><div><h2>Created</h2><p>Новый объект создан</p></div><code>POST /users</code></article>
-      <article><span class="status-code">404</span><div><h2>Not Found</h2><p>Запрошенный ресурс не найден</p></div><code>GET /users/999</code></article>
+      <article><span class="status-code">404</span><div><h2>Not Found</h2><p>Запрошенные данные не найдены</p></div><code>GET /users/999</code></article>
     </div>
   </section>
   <section class="slide" id="slide-8" aria-labelledby="title-8" hidden>
