@@ -131,13 +131,13 @@
     <div class="fastapi-example">
       <article class="code-panel" aria-label="Минимальное приложение FastAPI в main.py">
         <div class="client-panel-label">main.py</div>
-        <pre><code><span class="python-keyword">from</span> fastapi <span class="python-keyword">import</span> FastAPI
+        <div class="fastapi-code-editor"><span class="line-numbers" aria-hidden="true">1<br>2<br>3<br>4<br>5<br>6<br>7</span><pre><code><span class="python-keyword">from</span> fastapi <span class="python-keyword">import</span> FastAPI
 
 app = <span class="yellow">FastAPI</span>()
 
 <span class="yellow">@app.get</span>(<span class="json-key">"/"</span>)
 <span class="python-keyword">def</span> <span class="yellow">hello</span>():
-    <span class="python-keyword">return</span> {<span class="json-key">"message"</span>: <span class="json-key">"Hello, Books App!"</span>}</code></pre>
+    <span class="python-keyword">return</span> {<span class="json-key">"message"</span>: <span class="json-key">"Hello, Books App!"</span>}</code></pre></div>
       </article>
       <dl class="request-definitions">
         <div><dt>app = FastAPI()</dt><dd>Создаём приложение.</dd></div>

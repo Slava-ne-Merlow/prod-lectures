@@ -123,3 +123,9 @@ footer{height:70px;border-top:1px solid var(--line);display:flex;align-items:cen
 .python-keyword{color:#fff}
 @media(min-width:751px) and (max-height:850px){.fastapi-example{padding:20px 0;gap:36px}.code-panel pre{font-size:18px;padding:24px}}
 @media(max-width:750px){.fastapi-example{grid-template-columns:1fr;gap:20px}.code-panel pre{font-size:13px;padding:20px 12px}.fastapi-example .request-definitions dt{font-size:18px}}
+
+.fastapi-code-editor{display:flex;gap:24px;padding:32px 26px;overflow-x:auto}
+.code-panel .fastapi-code-editor pre{padding:0;overflow:visible;flex:none}
+.fastapi-code-editor .line-numbers{flex:none;font-size:16px;line-height:calc(clamp(16px,1.35vw,25px)*1.85)}
+@media(min-width:751px) and (max-height:850px){.fastapi-code-editor{padding:24px;gap:20px}.fastapi-code-editor .line-numbers{line-height:33.3px}}
+@media(max-width:750px){.fastapi-code-editor{padding:20px 12px;gap:12px}.fastapi-code-editor .line-numbers{font-size:12px;line-height:24.05px;padding-right:10px}}
