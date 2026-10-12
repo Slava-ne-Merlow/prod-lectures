@@ -71,3 +71,11 @@ footer{height:70px;border-top:1px solid var(--line);display:flex;align-items:cen
 .status-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch;flex:1;padding:32px 0}.status-grid article{background:var(--deep);border:1px solid var(--line);border-radius:16px;padding:30px;display:flex;flex-direction:column}.status-grid article:last-child{border-color:#b2c6c077}.status-code{font:clamp(68px,7vw,126px)/1 var(--mono);letter-spacing:-.06em;color:var(--yellow);margin:10px 0 auto}.status-grid h2{margin-top:36px}.status-grid p{font-size:20px;color:var(--mint);min-height:62px}.status-grid code{border-top:1px solid var(--line);padding-top:20px;color:var(--mint);font-size:17px}
 @media(min-width:751px) and (max-height:850px){.contract-card{padding:22px}.contract-row{padding:16px 0}.contract-party{padding:10px}.contract-party strong{margin:12px 0}.contract-party p{font-size:16px}.method-grid{gap:16px}.method-grid article{min-height:180px;padding:22px}.method-grid h2{margin-top:18px}.method-grid p{font-size:16px}.status-grid{padding:16px 0}.status-grid article{padding:20px}.status-code{font-size:78px}.status-grid h2{margin-top:20px}.status-grid p{font-size:16px;min-height:45px}}
 @media(max-width:750px){.api-contract,.method-grid,.status-grid{grid-template-columns:1fr}.api-contract{gap:12px}.contract-party{padding:12px}.contract-party strong{margin:7px 0}.contract-party p{font-size:16px}.contract-card{padding:22px}.contract-row{padding:17px 0}.method-grid article{min-height:0;padding:24px}.method-grid h2{margin-top:18px}.status-grid{padding:10px 0}.status-grid article{min-height:240px}.status-code{font-size:72px}.status-grid h2{margin-top:16px}.status-grid p{min-height:0}nav{gap:1px}.dot{padding:8px 7px}}
+
+.simple-request{justify-content:center;min-height:390px}
+.simple-request .request-section{padding:24px 0}
+.simple-request .request-section:first-of-type{margin-top:12px}
+.simple-request .request-section pre{font-size:clamp(17px,1.5vw,25px)}
+.simple-request .request-section:nth-last-child(1) pre{color:inherit}
+@media(min-width:751px) and (max-height:850px){.simple-request{min-height:340px}.simple-request .request-section{padding:18px 0}}
+@media(max-width:750px){.simple-request{min-height:0}}

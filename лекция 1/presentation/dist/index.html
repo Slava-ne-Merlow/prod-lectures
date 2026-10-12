@@ -48,18 +48,16 @@
     </div>
   </section>
   <section class="slide" id="slide-3" aria-labelledby="title-3" hidden>
-    <div class="eyebrow">02 / УСТРОЙСТВО HTTP-ЗАПРОСА</div>
-    <h1 id="title-3">Как выглядит <em>HTTP-запрос?</em></h1>
-    <p class="lead">Клиент указывает действие и адрес, затем передаёт дополнительные данные.</p>
+    <div class="eyebrow">02 / HTTP-ЗАПРОС</div>
+    <h1 id="title-3">Что важно в <em>HTTP-запросе?</em></h1>
+    <p class="lead">Для начала разберём действие, адрес и передаваемые данные.</p>
     <div class="request-layout">
-      <div class="request-sheet generic-request"><div class="tag">СХЕМА ЗАПРОСА</div>
-        <div class="request-section"><span class="code-label">МЕТОД И ПУТЬ</span><pre><span class="yellow">МЕТОД</span> <span class="mint">/путь</span> HTTP/1.1</pre></div>
-        <div class="request-section"><span class="code-label">ЗАГОЛОВКИ</span><pre>Host: адрес-сервера
-Content-Type: формат-данных</pre></div>
-        <div class="request-section"><span class="code-label">ТЕЛО / ЕСЛИ НУЖНО</span><pre><span class="yellow">{ данные для сервера }</span></pre></div>
-        <div class="request-url">Полный URL для клиента: <code>https://адрес-сервера/путь</code></div>
+      <div class="request-sheet simple-request"><div class="tag">ПРИМЕР ДЛЯ ПЕРВОГО ЗНАКОМСТВА</div>
+        <div class="request-section"><span class="code-label">МЕТОД</span><pre><span class="yellow">POST</span></pre></div>
+        <div class="request-section"><span class="code-label">URL / АДРЕС</span><pre>https://api.example.com/users</pre></div>
+        <div class="request-section"><span class="code-label">ДАННЫЕ / ЕСЛИ НУЖНО</span><pre><span class="yellow">{ "name": "Аня" }</span></pre></div>
       </div>
-      <div class="parts"><article><b>01</b><div><h2>Метод <small>Method</small></h2><p>Что сделать: например, GET — получить данные, POST — отправить.</p></div></article><article><b>02</b><div><h2>Адрес <small>URL</small></h2><p>К какому серверу и пути обратиться. После <code>?</code> могут идти параметры.</p></div></article><article><b>03</b><div><h2>Заголовки <small>Headers</small></h2><p>Дополнительная информация о запросе, например формат тела.</p></div></article><article><b>04</b><div><h2>Тело <small>Body</small></h2><p>Данные, которые получает сервер. У запроса может не быть тела.</p></div></article></div>
+      <div class="parts"><article><b>01</b><div><h2>Метод <small>Method</small></h2><p>Какое действие запросить: например, получить или создать.</p></div></article><article><b>02</b><div><h2>Адрес <small>URL</small></h2><p>Куда отправить запрос: к какому серверу и пути.</p></div></article><article><b>03</b><div><h2>Тело <small>Body</small></h2><p>Данные для обработки, если они нужны. У GET-запроса в нашем примере тела нет.</p></div></article></div>
     </div>
   </section>
   <section class="slide" id="slide-4" aria-labelledby="title-4" hidden>
@@ -67,10 +65,8 @@ Content-Type: формат-данных</pre></div>
     <h1 id="title-4">Фронт отправляет.<br><em>Бэкенд отвечает.</em></h1>
     <p class="lead">Посмотрим, как клиент получает профиль пользователя.</p>
     <div class="exchange">
-      <article class="message"><div class="message-heading"><span class="step">1</span><h2>Запрос с фронта</h2><span class="direction">↗</span></div><p class="quote">«Покажи профиль пользователя 42»</p><pre><span class="yellow">GET</span> /users/42 HTTP/1.1
-<span class="muted">Host: api.example.com</span></pre><div class="message-note">GET /users/42 — получить конкретного пользователя</div></article>
-      <article class="message response"><div class="message-heading"><span class="step">2</span><h2>Ответ бэкенда</h2><span class="direction">↙</span></div><p class="quote">«Вот данные этого пользователя»</p><pre>HTTP/1.1 <span class="yellow">200 OK</span>
-<span class="muted">Content-Type: application/json</span>
+      <article class="message"><div class="message-heading"><span class="step">1</span><h2>Запрос с фронта</h2><span class="direction">↗</span></div><p class="quote">«Покажи профиль пользователя 42»</p><pre><span class="yellow">GET</span> https://api.example.com/users/42</pre><div class="message-note">GET /users/42 — получить конкретного пользователя</div></article>
+      <article class="message response"><div class="message-heading"><span class="step">2</span><h2>Ответ бэкенда</h2><span class="direction">↙</span></div><p class="quote">«Вот данные этого пользователя»</p><pre><span class="yellow">200 OK</span>
 
 { "id": 42, "name": "Аня" }</pre><div class="message-note"><b>200</b> — успех <span>JSON — формат данных</span></div></article>
     </div>
