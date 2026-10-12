@@ -1,7 +1,7 @@
 # Лекция 1 · Клиент, сервер и первый endpoint
 
-- [План и тайминг](books_app_video_1_scenario.md) — 11 минут.
-- [Текст презентации](books_app_video_1_part_1_presentation.md) — первые 5 минут.
+- [План и тайминг](books_app_video_1_scenario.md) — 12 минут.
+- [Текст презентации](books_app_video_1_part_1_presentation.md) — первые 6 минут.
 - [Сценарий лайвкодинга](books_app_video_1_part_2_livecoding.md) — 5:30 и 0:30 на итоги.
 - [Требования автора](books_app_video_1_requirements.md).
 - [Веб-презентация](presentation/dist/index.html) — заглавный и четыре содержательных слайда.

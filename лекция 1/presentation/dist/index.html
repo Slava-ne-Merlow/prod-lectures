@@ -76,9 +76,41 @@ Content-Type: формат-данных</pre></div>
     </div>
   </section>
   <section class="slide" id="slide-5" aria-labelledby="title-5" hidden>
-    <div class="eyebrow">04 / API И ENDPOINTS</div>
-    <h1 id="title-5">Как запрос<br><em>находит свой код?</em></h1>
-    <p class="lead">Endpoint — точка API, за которой стоит обработчик.</p>
+    <div class="eyebrow">04 / API</div>
+    <h1 id="title-5">API — <em>договор с клиентом.</em></h1>
+    <p class="lead">Клиент знает, какой запрос отправить и какой ответ ожидать.</p>
+    <div class="api-contract">
+      <div class="contract-party"><span class="tag">КЛИЕНТ</span><strong>Фронт</strong><p>Отправляет запрос<br>Читает ответ</p></div>
+      <div class="contract-card"><span class="tag">ПРИМЕР ДОГОВОРА</span><div class="contract-row"><span>ЗАПРОС</span><code><b>GET</b> /users/42</code></div><div class="contract-row"><span>ОТВЕТ</span><code><b>200</b> { "id": 42, "name": "Аня" }</code></div><div class="contract-row"><span>ЕСЛИ НЕТ</span><code><b>404</b> Not Found</code></div></div>
+      <div class="contract-party"><span class="tag">БЭКЕНД</span><strong>Сервер</strong><p>Принимает запрос<br>Возвращает ответ</p></div>
+    </div>
+    <p class="slide-aside">Один и тот же API может использовать сайт и мобильное приложение.</p>
+  </section>
+  <section class="slide" id="slide-6" aria-labelledby="title-6" hidden>
+    <div class="eyebrow">05 / МЕТОДЫ HTTP</div>
+    <h1 id="title-6">Метод говорит, <em>что сделать.</em></h1>
+    <p class="lead">Ниже — типичные операции для API пользователей.</p>
+    <div class="method-grid">
+      <article><div><span class="method-verb">GET</span><code>/users/42</code></div><h2>Получить</h2><p>Запросить данные пользователя</p></article>
+      <article><div><span class="method-verb">POST</span><code>/users</code></div><h2>Создать</h2><p>Отправить данные нового пользователя</p></article>
+      <article><div><span class="method-verb">PATCH</span><code>/users/42</code></div><h2>Изменить</h2><p>Обновить часть данных пользователя</p></article>
+      <article><div><span class="method-verb">DELETE</span><code>/users/42</code></div><h2>Удалить</h2><p>Удалить пользователя</p></article>
+    </div>
+  </section>
+  <section class="slide" id="slide-7" aria-labelledby="title-7" hidden>
+    <div class="eyebrow">06 / СТАТУСЫ HTTP</div>
+    <h1 id="title-7">Статус показывает <em>результат.</em></h1>
+    <p class="lead">Он находится в ответе бэкенда.</p>
+    <div class="status-grid">
+      <article><span class="status-code">200</span><div><h2>OK</h2><p>Запрос выполнен успешно</p></div><code>GET /users/42</code></article>
+      <article><span class="status-code">201</span><div><h2>Created</h2><p>Новый объект создан</p></div><code>POST /users</code></article>
+      <article><span class="status-code">404</span><div><h2>Not Found</h2><p>Запрошенный ресурс не найден</p></div><code>GET /users/999</code></article>
+    </div>
+  </section>
+  <section class="slide" id="slide-8" aria-labelledby="title-8" hidden>
+    <div class="eyebrow">07 / ENDPOINTS</div>
+    <h1 id="title-8">Как запрос<br><em>находит свой код?</em></h1>
+    <p class="lead">Endpoint связывает метод и путь с обработчиком.</p>
     <div class="routing">
       <div class="routes"><div class="tag">МЕТОД + ПУТЬ</div><div class="route"><span class="verb">GET</span><code>/users</code><span>Список</span></div><div class="route selected"><span class="verb">GET</span><code>/users/42</code><span>Профиль</span></div><div class="route"><span class="verb post">POST</span><code>/users</code><span>Создание</span></div></div>
       <div class="route-link" aria-hidden="true">⟶</div>
@@ -86,7 +118,7 @@ Content-Type: формат-данных</pre></div>
     </div>
   </section>
 </main>
-<footer><span id="counter" aria-live="polite">01 / 05</span><nav aria-label="Слайды"><button class="dot active" aria-label="Заглавный слайд" aria-current="step">01</button><button class="dot" aria-label="Устройство приложения">02</button><button class="dot" aria-label="Состав запроса">03</button><button class="dot" aria-label="Запрос и ответ">04</button><button class="dot" aria-label="Endpoints">05</button></nav><span class="footer-label">PROD / BACKEND</span></footer>
+<footer><span id="counter" aria-live="polite">01 / 08</span><nav aria-label="Слайды"><button class="dot active" aria-label="Заглавный слайд" aria-current="step">01</button><button class="dot" aria-label="Устройство приложения">02</button><button class="dot" aria-label="Состав запроса">03</button><button class="dot" aria-label="Запрос и ответ">04</button><button class="dot" aria-label="API">05</button><button class="dot" aria-label="Методы HTTP">06</button><button class="dot" aria-label="Статусы HTTP">07</button><button class="dot" aria-label="Endpoints">08</button></nav><span class="footer-label">PROD / BACKEND</span></footer>
 <div class="progress"><div id="progress"></div></div>
 <script src="app.js"></script>
 </body></html>
