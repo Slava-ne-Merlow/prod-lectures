@@ -105,3 +105,11 @@ footer{height:70px;border-top:1px solid var(--line);display:flex;align-items:cen
 .request-client-pair .client-editor{padding-bottom:22px}
 @media(min-width:751px) and (max-height:850px){.request-client-pair .client-editor{padding-top:16px;padding-bottom:16px}.request-client-pair .client-editor pre{font-size:22px;line-height:1.6}.request-client-pair .line-numbers{line-height:35.2px}.request-definitions{margin:0 24px 20px;padding-top:12px;font-size:14px}.request-definitions>div{grid-template-columns:130px 1fr}}
 @media(max-width:750px){.request-definitions{margin:0 20px 20px;font-size:13px}.request-definitions>div{grid-template-columns:115px 1fr;gap:8px}}
+
+/* Request terms sit above the API-client cards. */
+#slide-3>.request-definitions{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin:22px 0 0;padding:0;border:0;font-size:16px}
+#slide-3>.request-definitions>div{display:block;margin:0}
+#slide-3>.request-definitions dt{margin-bottom:5px;font-size:18px}
+#slide-3>.request-definitions dd{line-height:1.4}
+@media(min-width:751px) and (max-height:850px){#slide-3>.request-definitions{margin-top:18px;font-size:15px}#slide-3>.request-definitions dt{font-size:17px}.request-client-pair{padding:18px 0}}
+@media(max-width:750px){#slide-3>.request-definitions{grid-template-columns:1fr;gap:12px;font-size:14px}#slide-3>.request-definitions>div{display:grid;grid-template-columns:120px 1fr;gap:12px}#slide-3>.request-definitions dt{font-size:14px;margin:0}}

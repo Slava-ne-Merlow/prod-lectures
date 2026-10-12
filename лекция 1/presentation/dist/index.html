@@ -49,8 +49,13 @@
   </section>
   <section class="slide" id="slide-3" aria-labelledby="title-3" hidden>
     <div class="eyebrow">02 / HTTP-ЗАПРОС</div>
-    <h1 id="title-3">Из чего состоит <em>запрос?</em></h1>
+    <h1 id="title-3">Из чего состоит <em>HTTP-запрос?</em></h1>
     <p class="lead">Для начала разберём метод, адрес и передаваемые данные.</p>
+        <dl class="request-definitions">
+          <div><dt>Метод</dt><dd>Какое действие выполнить</dd></div>
+          <div><dt>Адрес сервера</dt><dd>Куда отправить запрос</dd></div>
+          <div><dt>Путь</dt><dd>К какому ресурсу обратиться</dd></div>
+        </dl>
     <div class="request-client-pair">
       <article class="request-client" aria-label="Общая схема запроса в API-клиенте">
         <div class="client-panel-label">КАК ЗАДАТЬ ЗАПРОС</div>
@@ -60,11 +65,7 @@
   <span class="json-key">"name"</span>: <span class="json-value">"Lotty"</span>,
   <span class="json-key">"age"</span>: <span class="json-value">4</span>
 }</pre></div>
-        <dl class="request-definitions">
-          <div><dt>Метод</dt><dd>Какое действие выполнить</dd></div>
-          <div><dt>Адрес сервера</dt><dd>Куда отправить запрос</dd></div>
-          <div><dt>Путь</dt><dd>К какому ресурсу обратиться</dd></div>
-        </dl>
+
       </article>
       <article class="request-client local-request" aria-label="Пример POST-запроса на localhost">
         <div class="client-panel-label">ПРИМЕР НА LOCALHOST</div>
