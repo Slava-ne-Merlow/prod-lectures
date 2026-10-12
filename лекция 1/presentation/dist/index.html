@@ -48,8 +48,19 @@
     </div>
   </section>
   <section class="slide" id="slide-3" aria-labelledby="title-3" hidden>
-    <div class="eyebrow">02 / HTTP-ЗАПРОС</div>
-    <h1 id="title-3">Из чего состоит <em>HTTP-запрос?</em></h1>
+    <div class="eyebrow">02 / КОНТРАКТ</div>
+    <h1 id="title-3">Как договориться <em>фронту и бэку?</em></h1>
+    <p class="lead">Согласуем запросы и ответы — и разрабатываем обе части параллельно.</p>
+    <div class="agreement-layout">
+      <article class="agreement-party"><span class="tag">ФРОНТЕНД</span><h2>Делает интерфейс</h2><p>Использует тестовые данные<br>в согласованном формате</p></article>
+      <article class="agreement-contract"><span class="tag">КОНТРАКТ API</span><div><b>Куда обращаемся</b><p>Методы и пути запросов</p></div><div><b>Что передаём</b><p>Поля, типы и обязательные данные</p></div><div><b>Что получаем</b><p>Формат ответа и статусы</p></div></article>
+      <article class="agreement-party"><span class="tag">БЭКЕНД</span><h2>Пишет обработчики</h2><p>Принимает запросы<br>и возвращает согласованный ответ</p></article>
+    </div>
+    <p class="rest-intro"><span>REST</span> — подход к организации API. В привычном HTTP API путь обозначает, с чем работаем, а метод — что делаем.</p>
+  </section>
+  <section class="slide" id="slide-4" aria-labelledby="title-4" hidden>
+    <div class="eyebrow">03 / HTTP-ЗАПРОС</div>
+    <h1 id="title-4">Из чего состоит <em>HTTP-запрос?</em></h1>
     <p class="lead">Для начала разберём метод, адрес и передаваемые данные.</p>
 
     <div class="request-client-pair">
@@ -71,9 +82,9 @@
         </dl>
     </div>
   </section>
-  <section class="slide" id="slide-4" aria-labelledby="title-4" hidden>
-    <div class="eyebrow">03 / МЕТОДЫ HTTP</div>
-    <h1 id="title-4">Какие бывают <em>HTTP-методы?</em></h1>
+  <section class="slide" id="slide-5" aria-labelledby="title-5" hidden>
+    <div class="eyebrow">04 / МЕТОДЫ HTTP</div>
+    <h1 id="title-5">Какие бывают <em>HTTP-методы?</em></h1>
     <p class="lead">Метод сообщает, какое действие ожидает клиент. Выполняет его код бэкенда.</p>
     <div class="method-grid">
       <article><div><span class="method-verb">GET</span><code>/users/42</code></div><h2>Получить</h2><p>Запросить данные пользователя</p></article>
@@ -82,9 +93,9 @@
       <article><div><span class="method-verb">DELETE</span><code>/users/42</code></div><h2>Удалить</h2><p>Удалить пользователя</p></article>
     </div>
   </section>
-  <section class="slide" id="slide-5" aria-labelledby="title-5" hidden>
-    <div class="eyebrow">04 / HTTP-ОТВЕТ</div>
-    <h1 id="title-5">Как выглядит <em>HTTP-ответ?</em></h1>
+  <section class="slide" id="slide-6" aria-labelledby="title-6" hidden>
+    <div class="eyebrow">05 / HTTP-ОТВЕТ</div>
+    <h1 id="title-6">Как выглядит <em>HTTP-ответ?</em></h1>
     <p class="lead">Бэкенд сообщает результат запроса и возвращает данные.</p>
     <div class="request-client-pair">
       <article class="request-client local-request" aria-label="Пример ответа на создание пользователя">
@@ -104,9 +115,9 @@
       </dl>
     </div>
   </section>
-  <section class="slide" id="slide-6" aria-labelledby="title-6" hidden>
-    <div class="eyebrow">05 / СТАТУСЫ HTTP</div>
-    <h1 id="title-6">Какие бывают <em>HTTP-статусы?</em></h1>
+  <section class="slide" id="slide-7" aria-labelledby="title-7" hidden>
+    <div class="eyebrow">06 / СТАТУСЫ HTTP</div>
+    <h1 id="title-7">Какие бывают <em>HTTP-статусы?</em></h1>
     <p class="lead">Код статуса сообщает клиенту, чем закончился запрос.</p>
     <div class="status-grid">
       <article><span class="status-code">200</span><div><h2>OK</h2><p>Запрос выполнен успешно</p></div><code>GET /users/42</code></article>
@@ -114,9 +125,9 @@
       <article><span class="status-code">404</span><div><h2>Not Found</h2><p>Запрошенные данные не найдены</p></div><code>GET /users/999</code></article>
     </div>
   </section>
-  <section class="slide" id="slide-7" aria-labelledby="title-7" hidden>
-    <div class="eyebrow">06 / ОБРАБОТКА ЗАПРОСА</div>
-    <h1 id="title-7">Как запрос<br><em>находит свой код?</em></h1>
+  <section class="slide" id="slide-8" aria-labelledby="title-8" hidden>
+    <div class="eyebrow">07 / ОБРАБОТКА ЗАПРОСА</div>
+    <h1 id="title-8">Как запрос<br><em>находит свой код?</em></h1>
     <p class="lead">Endpoint связывает метод и путь с обработчиком.</p>
     <div class="routing">
       <div class="routes"><div class="tag">МЕТОД + ПУТЬ</div><div class="route"><span class="verb">GET</span><code>/users</code><span>Список</span></div><div class="route selected"><span class="verb">GET</span><code>/users/42</code><span>Профиль</span></div><div class="route"><span class="verb post">POST</span><code>/users</code><span>Создание</span></div></div>
@@ -124,9 +135,9 @@
       <article class="handler"><div class="tag">ОБРАБОТЧИК ЗАПРОСА</div><h2>Получить пользователя</h2><p>Найти пользователя с <code>id = 42</code><br>Подготовить данные ответа</p><div class="handler-result"><b>200 OK</b><code>{ "id": 42, "name": "Аня" }</code></div></article>
     </div>
   </section>
-  <section class="slide" id="slide-8" aria-labelledby="title-8" hidden>
-    <div class="eyebrow">07 / FASTAPI</div>
-    <h1 id="title-8">Как написать <em>первый endpoint?</em></h1>
+  <section class="slide" id="slide-9" aria-labelledby="title-9" hidden>
+    <div class="eyebrow">08 / FASTAPI</div>
+    <h1 id="title-9">Как написать <em>первый endpoint?</em></h1>
     <p class="lead">Создадим приложение FastAPI и обработчик GET-запроса по пути /.</p>
     <div class="fastapi-example">
       <article class="code-panel" aria-label="Минимальное приложение FastAPI в main.py">
@@ -146,10 +157,10 @@ app = <span class="yellow">FastAPI</span>()
       </dl>
     </div>
   </section>
-  <section class="slide cover livecoding-cover" id="slide-9" aria-labelledby="title-9" hidden>
-    <div class="eyebrow">08 / ПЕРЕХОДИМ К ПРАКТИКЕ</div>
+  <section class="slide cover livecoding-cover" id="slide-10" aria-labelledby="title-10" hidden>
+    <div class="eyebrow">09 / ПЕРЕХОДИМ К ПРАКТИКЕ</div>
     <div class="cover-layout">
-      <div><div class="live-label"><span aria-hidden="true"></span> ЛАЙВКОДИНГ</div><h1 id="title-9">Пишем<br><em>Books App.</em></h1><p class="lead">Наш каталог книг.<br>Начнём с сервера на FastAPI.</p></div>
+      <div><div class="live-label"><span aria-hidden="true"></span> ЛАЙВКОДИНГ</div><h1 id="title-10">Пишем<br><em>Books App.</em></h1><p class="lead">Наш каталог книг.<br>Начнём с сервера на FastAPI.</p></div>
       <div class="books-art">
         <svg viewBox="0 0 600 480" role="img" aria-labelledby="books-art-title">
           <title id="books-art-title">Книги рядом с окном кода Books App</title>
@@ -181,7 +192,7 @@ app = <span class="yellow">FastAPI</span>()
     </div>
   </section>
 </main>
-<footer><span id="counter" aria-live="polite">01 / 09</span><nav aria-label="Слайды"><button class="dot active" aria-label="Заглавный слайд" aria-current="step">01</button><button class="dot" aria-label="Устройство приложения">02</button><button class="dot" aria-label="HTTP-запрос">03</button><button class="dot" aria-label="Методы HTTP">04</button><button class="dot" aria-label="HTTP-ответ">05</button><button class="dot" aria-label="Статусы HTTP">06</button><button class="dot" aria-label="Обработка запроса">07</button><button class="dot" aria-label="Первый endpoint на FastAPI">08</button><button class="dot" aria-label="Лайвкодинг Books App">09</button></nav><span class="footer-label">PROD / BACKEND</span></footer>
+<footer><span id="counter" aria-live="polite">01 / 10</span><nav aria-label="Слайды"><button class="dot active" aria-label="Заглавный слайд" aria-current="step">01</button><button class="dot" aria-label="Устройство приложения">02</button><button class="dot" aria-label="Контракт фронтенда и бэкенда">03</button><button class="dot" aria-label="HTTP-запрос">04</button><button class="dot" aria-label="Методы HTTP">05</button><button class="dot" aria-label="HTTP-ответ">06</button><button class="dot" aria-label="Статусы HTTP">07</button><button class="dot" aria-label="Обработка запроса">08</button><button class="dot" aria-label="Первый endpoint на FastAPI">09</button><button class="dot" aria-label="Лайвкодинг Books App">10</button></nav><span class="footer-label">PROD / BACKEND</span></footer>
 <div class="progress"><div id="progress"></div></div>
 <script src="app.js"></script>
 </body></html>
