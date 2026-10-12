@@ -113,3 +113,6 @@ footer{height:70px;border-top:1px solid var(--line);display:flex;align-items:cen
 .request-definitions dd{font-size:clamp(16px,1.2vw,20px);line-height:1.45}
 .request-definitions>div{padding:16px 0}
 @media(min-width:751px) and (max-height:850px){.request-definitions>div{padding:12px 0}.request-definitions dt{font-size:19px;margin-bottom:5px}.request-definitions dd{font-size:16px}}
+
+.response-status{margin:24px 26px 28px;font:24px var(--mono)}
+@media(min-width:751px) and (max-height:850px){.response-status{margin:20px;font-size:22px}}
