@@ -129,3 +129,12 @@ footer{height:70px;border-top:1px solid var(--line);display:flex;align-items:cen
 .fastapi-code-editor .line-numbers{flex:none;font-size:16px;line-height:calc(clamp(16px,1.35vw,25px)*1.85)}
 @media(min-width:751px) and (max-height:850px){.fastapi-code-editor{padding:24px;gap:20px}.fastapi-code-editor .line-numbers{line-height:33.3px}}
 @media(max-width:750px){.fastapi-code-editor{padding:20px 12px;gap:12px}.fastapi-code-editor .line-numbers{font-size:12px;line-height:24.05px;padding-right:10px}}
+
+/* Books App section cover. */
+.livecoding-cover .cover-layout{grid-template-columns:1fr 1.1fr;gap:40px}
+.livecoding-cover h1{font-size:clamp(60px,6vw,104px)}
+.live-label{display:flex;align-items:center;gap:10px;color:var(--yellow);font:12px var(--mono);letter-spacing:2px;margin-bottom:25px}
+.live-label>span{width:8px;height:8px;border-radius:50%;background:var(--yellow)}
+.books-art{min-width:0}.books-art svg{display:block;width:100%;height:auto}
+@media(min-width:751px) and (max-height:850px){.livecoding-cover h1{font-size:clamp(54px,5.4vw,76px)}.live-label{margin-bottom:20px}}
+@media(max-width:750px){.livecoding-cover .cover-layout{grid-template-columns:1fr;gap:10px}.livecoding-cover h1{font-size:56px}.live-label{margin:24px 0 18px}.books-art{max-width:450px;width:100%;margin:auto}nav{gap:0}.dot{padding:8px 6px}}
