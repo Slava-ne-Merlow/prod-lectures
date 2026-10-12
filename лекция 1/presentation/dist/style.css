@@ -49,3 +49,13 @@ footer{height:70px;border-top:1px solid var(--line);display:flex;align-items:cen
 @media(min-width:751px) and (max-height:850px){.system-diagram{padding:12px 0}.message{min-height:320px}.request-sheet{min-height:350px}.exchange,.request-layout{padding:10px 0}}
 @media(max-width:750px){.system-diagram{overflow-x:auto;align-items:center;min-height:330px;padding-bottom:20px}.system-diagram svg{width:1000px;min-width:1000px}.message,.request-sheet{min-height:0}.exchange,.request-layout{margin-block:0}}
 @media(min-width:751px) and (max-height:850px){.system-diagram svg{max-height:340px}.system-diagram{min-height:0}}
+
+/* Generic anatomy diagram on slide 3. */
+.generic-request .request-section:first-of-type{margin-top:22px}
+.generic-request .request-section pre{font-size:clamp(17px,1.35vw,23px)}
+.generic-request .request-section{padding:22px 0}
+.generic-request .request-section:last-of-type pre{color:inherit}
+.generic-request .mint{color:var(--mint)}
+.request-url{border-top:1px solid var(--line);padding-top:18px;margin-top:auto;color:var(--mint);font-size:15px;line-height:1.6}
+.request-url code{display:block;color:var(--yellow);overflow-wrap:anywhere;margin-top:7px;font-size:clamp(14px,1.1vw,19px)}
+@media(min-width:751px) and (max-height:850px){.generic-request .request-section{padding:15px 0}.generic-request .request-section:first-of-type{margin-top:10px}.request-url{padding-top:12px}}

@@ -48,24 +48,31 @@
     </div>
   </section>
   <section class="slide" id="slide-3" aria-labelledby="title-3" hidden>
-    <div class="eyebrow">02 / ЗАПРОС И ОТВЕТ</div>
-    <h1 id="title-3">Общий язык — <em>HTTP.</em></h1>
-    <p class="lead">Протокол задаёт правила обмена сообщениями.</p>
-    <div class="exchange">
-      <article class="message"><div class="message-heading"><span class="step">1</span><h2>Клиент запрашивает</h2><span class="direction">↗</span></div><p class="quote">«Покажи профиль пользователя 42»</p><pre><span class="yellow">GET</span> /users/42 HTTP/1.1
-<span class="muted">Host: api.example.com</span></pre><div class="message-note">Метод + путь → что хотим получить</div></article>
-      <article class="message response"><div class="message-heading"><span class="step">2</span><h2>Сервер отвечает</h2><span class="direction">↙</span></div><p class="quote">«Вот данные этого пользователя»</p><pre>HTTP/1.1 <span class="yellow">200 OK</span>
-<span class="muted">Content-Type: application/json</span>
-
-{ "id": 42, "name": "Аня" }</pre><div class="message-note"><b>200</b> — успех <span>JSON — формат данных</span></div></article>
+    <div class="eyebrow">02 / УСТРОЙСТВО HTTP-ЗАПРОСА</div>
+    <h1 id="title-3">Как выглядит <em>HTTP-запрос?</em></h1>
+    <p class="lead">Клиент указывает действие и адрес, затем передаёт дополнительные данные.</p>
+    <div class="request-layout">
+      <div class="request-sheet generic-request"><div class="tag">СХЕМА ЗАПРОСА</div>
+        <div class="request-section"><span class="code-label">МЕТОД И ПУТЬ</span><pre><span class="yellow">МЕТОД</span> <span class="mint">/путь</span> HTTP/1.1</pre></div>
+        <div class="request-section"><span class="code-label">ЗАГОЛОВКИ</span><pre>Host: адрес-сервера
+Content-Type: формат-данных</pre></div>
+        <div class="request-section"><span class="code-label">ТЕЛО / ЕСЛИ НУЖНО</span><pre><span class="yellow">{ данные для сервера }</span></pre></div>
+        <div class="request-url">Полный URL для клиента: <code>https://адрес-сервера/путь</code></div>
+      </div>
+      <div class="parts"><article><b>01</b><div><h2>Метод <small>Method</small></h2><p>Что сделать: например, GET — получить данные, POST — отправить.</p></div></article><article><b>02</b><div><h2>Адрес <small>URL</small></h2><p>К какому серверу и пути обратиться. После <code>?</code> могут идти параметры.</p></div></article><article><b>03</b><div><h2>Заголовки <small>Headers</small></h2><p>Дополнительная информация о запросе, например формат тела.</p></div></article><article><b>04</b><div><h2>Тело <small>Body</small></h2><p>Данные, которые получает сервер. У запроса может не быть тела.</p></div></article></div>
     </div>
   </section>
   <section class="slide" id="slide-4" aria-labelledby="title-4" hidden>
-    <div class="eyebrow">03 / УСТРОЙСТВО HTTP-ЗАПРОСА</div>
-    <h1 id="title-4">Один запрос.<br><em>Четыре составляющие.</em></h1>
-    <div class="request-layout">
-      <div class="request-sheet"><div class="tag">ПРИМЕР / СОЗДАТЬ ПОЛЬЗОВАТЕЛЯ</div><div class="request-address"><span class="method">POST</span><code>https://api.example.com/users</code></div><div class="request-section"><span class="code-label">HEADERS</span><pre>Content-Type: application/json</pre></div><div class="request-section"><span class="code-label">BODY</span><pre>{ "name": "Аня" }</pre></div><div class="sheet-note">Так запрос удобно представить в API-клиенте.</div></div>
-      <div class="parts"><article><b>01</b><div><h2>Метод <small>Method</small></h2><p>Что сделать: GET — получить,<br>POST — отправить данные для обработки.</p></div></article><article><b>02</b><div><h2>Адрес <small>URL</small></h2><p>Куда обратиться: схема, сервер и путь.<br>Здесь путь — <code>/users</code>.</p></div></article><article><b>03</b><div><h2>Заголовки <small>Headers</small></h2><p>Дополнительная информация.<br>Например, формат тела — JSON.</p></div></article><article><b>04</b><div><h2>Тело <small>Body</small></h2><p>Передаваемые данные.<br>В этом примере — имя пользователя.</p></div></article></div>
+    <div class="eyebrow">03 / ЗАПРОС И ОТВЕТ</div>
+    <h1 id="title-4">Фронт отправляет.<br><em>Бэкенд отвечает.</em></h1>
+    <p class="lead">Посмотрим, как клиент получает профиль пользователя.</p>
+    <div class="exchange">
+      <article class="message"><div class="message-heading"><span class="step">1</span><h2>Запрос с фронта</h2><span class="direction">↗</span></div><p class="quote">«Покажи профиль пользователя 42»</p><pre><span class="yellow">GET</span> /users/42 HTTP/1.1
+<span class="muted">Host: api.example.com</span></pre><div class="message-note">GET /users/42 — получить конкретного пользователя</div></article>
+      <article class="message response"><div class="message-heading"><span class="step">2</span><h2>Ответ бэкенда</h2><span class="direction">↙</span></div><p class="quote">«Вот данные этого пользователя»</p><pre>HTTP/1.1 <span class="yellow">200 OK</span>
+<span class="muted">Content-Type: application/json</span>
+
+{ "id": 42, "name": "Аня" }</pre><div class="message-note"><b>200</b> — успех <span>JSON — формат данных</span></div></article>
     </div>
   </section>
   <section class="slide" id="slide-5" aria-labelledby="title-5" hidden>
@@ -79,7 +86,7 @@
     </div>
   </section>
 </main>
-<footer><span id="counter" aria-live="polite">01 / 05</span><nav aria-label="Слайды"><button class="dot active" aria-label="Заглавный слайд" aria-current="step">01</button><button class="dot" aria-label="Устройство приложения">02</button><button class="dot" aria-label="HTTP">03</button><button class="dot" aria-label="Состав запроса">04</button><button class="dot" aria-label="Endpoints">05</button></nav><span class="footer-label">PROD / BACKEND</span></footer>
+<footer><span id="counter" aria-live="polite">01 / 05</span><nav aria-label="Слайды"><button class="dot active" aria-label="Заглавный слайд" aria-current="step">01</button><button class="dot" aria-label="Устройство приложения">02</button><button class="dot" aria-label="Состав запроса">03</button><button class="dot" aria-label="Запрос и ответ">04</button><button class="dot" aria-label="Endpoints">05</button></nav><span class="footer-label">PROD / BACKEND</span></footer>
 <div class="progress"><div id="progress"></div></div>
 <script src="app.js"></script>
 </body></html>
