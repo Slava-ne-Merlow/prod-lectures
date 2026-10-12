@@ -99,17 +99,12 @@ footer{height:70px;border-top:1px solid var(--line);display:flex;align-items:cen
 @media(min-width:751px) and (max-height:850px){.request-client-pair{padding:15px 0;gap:22px}.client-panel-label{padding:20px}.client-urlbar{margin:20px}.client-method{font-size:16px;gap:10px;padding:14px}.client-urlbar>code{font-size:16px;padding:12px}.client-editor{padding:22px 24px 30px}.client-editor pre{font-size:24px}.line-numbers{line-height:44.4px}}
 @media(max-width:750px){.request-client-pair{grid-template-columns:1fr;gap:20px}.client-panel-label{padding:18px}.client-urlbar{margin:18px 12px}.client-method{padding:10px;font-size:14px;gap:6px}.client-urlbar>code{font-size:12px;padding:10px}.client-editor{padding:20px;gap:18px}.client-editor pre{font-size:20px}.line-numbers{line-height:37px;padding-right:12px}}
 
-.request-definitions{margin:0 26px 24px;padding-top:16px;border-top:1px solid var(--line);font-size:15px;line-height:1.5}
-.request-definitions>div{display:grid;grid-template-columns:145px 1fr;gap:12px;margin-top:6px}
-.request-definitions dt{color:var(--yellow)}.request-definitions dd{margin:0;color:var(--mint)}
-.request-client-pair .client-editor{padding-bottom:22px}
-@media(min-width:751px) and (max-height:850px){.request-client-pair .client-editor{padding-top:16px;padding-bottom:16px}.request-client-pair .client-editor pre{font-size:22px;line-height:1.6}.request-client-pair .line-numbers{line-height:35.2px}.request-definitions{margin:0 24px 20px;padding-top:12px;font-size:14px}.request-definitions>div{grid-template-columns:130px 1fr}}
-@media(max-width:750px){.request-definitions{margin:0 20px 20px;font-size:13px}.request-definitions>div{grid-template-columns:115px 1fr;gap:8px}}
-
-/* Request terms sit above the API-client cards. */
-#slide-3>.request-definitions{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin:22px 0 0;padding:0;border:0;font-size:16px}
-#slide-3>.request-definitions>div{display:block;margin:0}
-#slide-3>.request-definitions dt{margin-bottom:5px;font-size:18px}
-#slide-3>.request-definitions dd{line-height:1.4}
-@media(min-width:751px) and (max-height:850px){#slide-3>.request-definitions{margin-top:18px;font-size:15px}#slide-3>.request-definitions dt{font-size:17px}.request-client-pair{padding:18px 0}}
-@media(max-width:750px){#slide-3>.request-definitions{grid-template-columns:1fr;gap:12px;font-size:14px}#slide-3>.request-definitions>div{display:grid;grid-template-columns:120px 1fr;gap:12px}#slide-3>.request-definitions dt{font-size:14px;margin:0}}
+/* Filled request alongside its terms. */
+.request-client-pair{grid-template-columns:1.25fr 1fr;gap:64px;align-items:center}
+.request-definitions{margin:0;padding:0;border:0;line-height:1.5}
+.request-definitions>div{padding:22px 0;border-bottom:1px solid var(--line)}
+.request-definitions>div:last-child{border-bottom:0}
+.request-definitions dt{color:var(--yellow);font-size:24px;margin-bottom:8px}
+.request-definitions dd{margin:0;color:var(--mint);font-size:20px}
+@media(min-width:751px) and (max-height:850px){.request-client-pair{gap:48px}.request-definitions>div{padding:18px 0}.request-definitions dt{font-size:22px}.request-definitions dd{font-size:18px}}
+@media(max-width:750px){.request-client-pair{grid-template-columns:1fr;gap:20px}.request-definitions>div{padding:14px 0}.request-definitions dt{font-size:20px;margin-bottom:4px}.request-definitions dd{font-size:16px}}
