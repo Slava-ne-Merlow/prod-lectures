@@ -51,13 +51,25 @@
     <div class="eyebrow">02 / HTTP-ЗАПРОС</div>
     <h1 id="title-3">Что важно в <em>HTTP-запросе?</em></h1>
     <p class="lead">Для начала разберём действие, адрес и передаваемые данные.</p>
-    <div class="request-layout">
-      <div class="request-sheet simple-request"><div class="tag">ПРИМЕР ДЛЯ ПЕРВОГО ЗНАКОМСТВА</div>
-        <div class="request-section"><span class="code-label">МЕТОД</span><pre><span class="yellow">POST</span></pre></div>
-        <div class="request-section"><span class="code-label">URL / АДРЕС</span><pre>https://api.example.com/users</pre></div>
-        <div class="request-section"><span class="code-label">ДАННЫЕ / ЕСЛИ НУЖНО</span><pre><span class="yellow">{ "name": "Аня" }</span></pre></div>
-      </div>
-      <div class="parts"><article><b>01</b><div><h2>Метод <small>Method</small></h2><p>Какое действие запросить: например, получить или создать.</p></div></article><article><b>02</b><div><h2>Адрес <small>URL</small></h2><p>Куда отправить запрос: к какому серверу и пути.</p></div></article><article><b>03</b><div><h2>Тело <small>Body</small></h2><p>Данные для обработки, если они нужны. У GET-запроса в нашем примере тела нет.</p></div></article></div>
+    <div class="request-client-pair">
+      <article class="request-client" aria-label="Общая схема запроса в API-клиенте">
+        <div class="client-panel-label">КАК ЗАДАТЬ ЗАПРОС</div>
+        <div class="client-urlbar"><span class="client-method">Метод <span aria-hidden="true">⌄</span></span><code>https://адрес-сервера/путь</code></div>
+        <div class="client-bodybar"><span>Body</span><small>JSON</small></div>
+        <div class="client-editor"><span class="line-numbers" aria-hidden="true">1<br>2<br>3<br>4</span><pre>{
+  <span class="json-key">"name"</span>: <span class="json-value">"Lotty"</span>,
+  <span class="json-key">"age"</span>: <span class="json-value">4</span>
+}</pre></div>
+      </article>
+      <article class="request-client local-request" aria-label="Пример POST-запроса на localhost">
+        <div class="client-panel-label">ПРИМЕР НА LOCALHOST</div>
+        <div class="client-urlbar"><span class="client-method">POST <span aria-hidden="true">⌄</span></span><code>http://localhost:8000/users</code></div>
+        <div class="client-bodybar"><span>Body</span><small>JSON</small></div>
+        <div class="client-editor"><span class="line-numbers" aria-hidden="true">1<br>2<br>3<br>4</span><pre>{
+  <span class="json-key">"name"</span>: <span class="json-value">"Lotty"</span>,
+  <span class="json-key">"age"</span>: <span class="json-value">4</span>
+}</pre></div>
+      </article>
     </div>
   </section>
   <section class="slide" id="slide-4" aria-labelledby="title-4" hidden>
