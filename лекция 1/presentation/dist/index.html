@@ -23,11 +23,11 @@
   </section>
   <section class="slide" id="slide-2" aria-labelledby="title-2" hidden>
     <div class="eyebrow">01 / УСТРОЙСТВО ПРИЛОЖЕНИЯ</div>
-    <h1 id="title-2">Клиент <em>и сервер</em></h1>
-    <p class="lead">Клиент показывает интерфейс. Сервер выполняет логику.</p>
+    <h1 id="title-2">Как устроено <em>приложение?</em></h1>
+    <p class="lead">Клиент показывает интерфейс и запрашивает данные у сервера.</p>
     <div class="system-diagram">
       <svg viewBox="0 0 1440 450" role="img" aria-labelledby="architecture-title architecture-description">
-        <title id="architecture-title">Клиенты и сервер приложения</title>
+        <title id="architecture-title">Устройство приложения: пользователь, веб-клиент, мобильное приложение и сервер</title>
         <desc id="architecture-description">Пользователь работает с веб-клиентом или мобильным приложением. Оба клиента отправляют HTTP-запросы одному серверу API и получают HTTP-ответы. Клиенты и сервер находятся внутри границы системы.</desc>
         <defs><marker id="arrow-request" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto-start-reverse"><path d="M1 1 L8 5 L1 9" fill="none" stroke="#ffdd2d" stroke-width="1.5"/></marker><marker id="arrow-muted" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto-start-reverse"><path d="M1 1 L8 5 L1 9" fill="none" stroke="#b2c6c0" stroke-width="1.5"/></marker></defs>
         <rect class="system-boundary" x="350" y="24" width="1070" height="402" rx="12"/>
@@ -36,7 +36,7 @@
         <path class="uses-link" d="M190 225 H264 V155 H383"/><path class="uses-link" d="M264 225 V325 H383"/>
         <text class="link-label muted-link-label" x="267" y="112">Работает с</text>
         <g class="container-node"><rect x="390" y="90" width="350" height="130" rx="10"/><text class="node-name" x="565" y="145">Веб-клиент</text><text class="node-detail" x="565" y="183">Показывает интерфейс</text></g>
-        <g class="container-node"><rect x="390" y="260" width="350" height="130" rx="10"/><text class="node-name" x="565" y="315">Мобильный клиент</text><text class="node-detail" x="565" y="353">Показывает интерфейс</text></g>
+        <g class="container-node"><rect x="390" y="260" width="350" height="130" rx="10"/><text class="node-name" x="565" y="315">Мобильное приложение</text><text class="node-detail" x="565" y="353">Показывает интерфейс</text></g>
         <path class="request-link" d="M740 136 H976 Q988 136 988 148 V177 Q988 189 1000 189 H1070"/>
         <path class="response-link" d="M1078 220 H970 Q958 220 958 208 V184 Q958 172 946 172 H748"/>
         <text class="link-label" x="860" y="119">HTTP-запрос</text><text class="link-label muted-link-label" x="860" y="201">HTTP-ответ</text>
@@ -79,7 +79,7 @@
     </div>
   </section>
 </main>
-<footer><span id="counter" aria-live="polite">01 / 05</span><nav aria-label="Слайды"><button class="dot active" aria-label="Заглавный слайд" aria-current="step">01</button><button class="dot" aria-label="Клиент и сервер">02</button><button class="dot" aria-label="HTTP">03</button><button class="dot" aria-label="Состав запроса">04</button><button class="dot" aria-label="Endpoints">05</button></nav><span class="footer-label">PROD / BACKEND</span></footer>
+<footer><span id="counter" aria-live="polite">01 / 05</span><nav aria-label="Слайды"><button class="dot active" aria-label="Заглавный слайд" aria-current="step">01</button><button class="dot" aria-label="Устройство приложения">02</button><button class="dot" aria-label="HTTP">03</button><button class="dot" aria-label="Состав запроса">04</button><button class="dot" aria-label="Endpoints">05</button></nav><span class="footer-label">PROD / BACKEND</span></footer>
 <div class="progress"><div id="progress"></div></div>
 <script src="app.js"></script>
 </body></html>
