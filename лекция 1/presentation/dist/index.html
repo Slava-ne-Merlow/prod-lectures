@@ -20,18 +20,30 @@
         <div class="wire response-wire"><b>←</b><span>200 OK</span></div>
       </div>
     </div>
-    <div class="cover-bottom"><span>01 <b>Устройство приложения</b></span><span>02 <b>HTTP и endpoints</b></span><span>03 <b>Практика на Python</b></span></div>
   </section>
   <section class="slide" id="slide-2" aria-labelledby="title-2" hidden>
     <div class="eyebrow">01 / КЛИЕНТ И СЕРВЕР</div>
     <h1 id="title-2">Две стороны<br><em>одного приложения.</em></h1>
     <p class="lead">Клиент показывает интерфейс. Сервер выполняет логику.</p>
-    <div class="architecture">
-      <div class="clients"><div class="tag">КЛИЕНТЫ</div><div class="client-row"><div class="browser-icon" aria-hidden="true"><div>•••</div><span></span><span></span></div><div><h2>Сайт в браузере</h2><p>Веб-интерфейс</p></div></div><div class="client-row"><div class="phone-icon" aria-hidden="true"><i></i><span></span></div><div><h2>Мобильное приложение</h2><p>Интерфейс на телефоне</p></div></div></div>
-      <div class="connection"><div><span>HTTP-запрос</span><b>⟶</b></div><div><b>⟵</b><span>HTTP-ответ</span></div></div>
-      <article class="server-panel"><div class="tag">СЕРВЕР</div><div class="server-heading"><h2>Общая логика<br>и данные</h2><span aria-hidden="true">{ }</span></div><ol><li>Принимает запрос</li><li>Обрабатывает данные</li><li>Возвращает результат</li></ol></article>
+    <div class="system-diagram">
+      <svg viewBox="0 0 1440 480" role="img" aria-labelledby="architecture-title architecture-description">
+        <title id="architecture-title">Клиенты и сервер приложения</title>
+        <desc id="architecture-description">Пользователь работает с веб-клиентом или мобильным приложением. Оба клиента отправляют HTTP-запросы одному серверу API и получают HTTP-ответы. Клиенты и сервер находятся внутри границы системы.</desc>
+        <defs><marker id="arrow-request" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto-start-reverse"><path d="M1 1 L8 5 L1 9" fill="none" stroke="#ffdd2d" stroke-width="1.5"/></marker><marker id="arrow-muted" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto-start-reverse"><path d="M1 1 L8 5 L1 9" fill="none" stroke="#b2c6c0" stroke-width="1.5"/></marker></defs>
+        <rect class="system-boundary" x="350" y="24" width="1070" height="432" rx="8"/>
+        <text class="boundary-label" x="376" y="56">ПРИЛОЖЕНИЕ / ГРАНИЦА СИСТЕМЫ</text>
+        <g class="person-node"><circle cx="115" cy="193" r="28"/><path d="M66 272 V250 Q66 227 90 227 H140 Q164 227 164 250 V272 Z"/><text class="node-name" x="115" y="315">Пользователь</text><text class="node-type" x="115" y="344">[Человек]</text></g>
+        <path class="uses-link" d="M190 240 H264 V164 H383"/><path class="uses-link" d="M264 240 V350 H383"/>
+        <text class="link-label muted-link-label" x="267" y="116">Работает с</text>
+        <g class="container-node"><rect x="390" y="92" width="350" height="145" rx="7"/><text class="node-name" x="565" y="134">Веб-клиент</text><text class="node-type" x="565" y="165">[Приложение в браузере]</text><text class="node-detail" x="565" y="206">Показывает интерфейс</text></g>
+        <g class="container-node"><rect x="390" y="278" width="350" height="145" rx="7"/><text class="node-name" x="565" y="320">Мобильный клиент</text><text class="node-type" x="565" y="351">[Мобильное приложение]</text><text class="node-detail" x="565" y="392">Показывает интерфейс</text></g>
+        <path class="request-link" d="M740 156 H1070"/><path class="response-link" d="M1070 192 H740"/>
+        <text class="link-label" x="905" y="138">HTTP-запрос</text><text class="link-label muted-link-label" x="905" y="220">HTTP-ответ</text>
+        <path class="request-link" d="M740 338 H1070"/><path class="response-link" d="M1070 374 H740"/>
+        <text class="link-label" x="905" y="320">HTTP-запрос</text><text class="link-label muted-link-label" x="905" y="402">HTTP-ответ</text>
+        <g class="container-node api-node"><rect x="1078" y="112" width="300" height="294" rx="7"/><text class="node-name" x="1228" y="218">Сервер / API</text><text class="node-type" x="1228" y="251">[Серверное приложение]</text><text class="node-detail" x="1228" y="294">Обрабатывает запросы</text><text class="node-detail" x="1228" y="324">и возвращает данные</text></g>
+      </svg>
     </div>
-    <p class="takeaway"><span>Главная мысль</span>Разные клиенты могут обращаться к одному серверу.</p>
   </section>
   <section class="slide" id="slide-3" aria-labelledby="title-3" hidden>
     <div class="eyebrow">02 / ЗАПРОС И ОТВЕТ</div>
@@ -45,7 +57,6 @@
 
 { "id": 42, "name": "Аня" }</pre><div class="message-note"><b>200</b> — успех <span>JSON — формат данных</span></div></article>
     </div>
-    <p class="takeaway"><span>После ответа</span>Клиент превращает полученные данные в интерфейс.</p>
   </section>
   <section class="slide" id="slide-4" aria-labelledby="title-4" hidden>
     <div class="eyebrow">03 / УСТРОЙСТВО HTTP-ЗАПРОСА</div>
@@ -54,7 +65,6 @@
       <div class="request-sheet"><div class="tag">ПРИМЕР / СОЗДАТЬ ПОЛЬЗОВАТЕЛЯ</div><div class="request-address"><span class="method">POST</span><code>https://api.example.com/users</code></div><div class="request-section"><span class="code-label">HEADERS</span><pre>Content-Type: application/json</pre></div><div class="request-section"><span class="code-label">BODY</span><pre>{ "name": "Аня" }</pre></div><div class="sheet-note">Так запрос удобно представить в API-клиенте.</div></div>
       <div class="parts"><article><b>01</b><div><h2>Метод <small>Method</small></h2><p>Что сделать: GET — получить,<br>POST — отправить данные для обработки.</p></div></article><article><b>02</b><div><h2>Адрес <small>URL</small></h2><p>Куда обратиться: схема, сервер и путь.<br>Здесь путь — <code>/users</code>.</p></div></article><article><b>03</b><div><h2>Заголовки <small>Headers</small></h2><p>Дополнительная информация.<br>Например, формат тела — JSON.</p></div></article><article><b>04</b><div><h2>Тело <small>Body</small></h2><p>Передаваемые данные.<br>В этом примере — имя пользователя.</p></div></article></div>
     </div>
-    <p class="takeaway"><span>Необязательно</span>У запроса может не быть тела. В URL могут быть параметры: <code>?active=true</code></p>
   </section>
   <section class="slide" id="slide-5" aria-labelledby="title-5" hidden>
     <div class="eyebrow">04 / API И ENDPOINTS</div>
@@ -65,8 +75,6 @@
       <div class="route-link" aria-hidden="true">⟶</div>
       <article class="handler"><div class="tag">ОБРАБОТЧИК ЗАПРОСА</div><h2>Получить пользователя</h2><p>Найти пользователя с <code>id = 42</code><br>Подготовить данные ответа</p><div class="handler-result"><b>200 OK</b><code>{ "id": 42, "name": "Аня" }</code></div></article>
     </div>
-    <p class="caption">API — интерфейс взаимодействия программ. Метод и путь определяют нужную операцию.</p>
-    <div class="next"><span>ПЕРЕХОДИМ К ПРАКТИКЕ</span><b>Books App · первый сервер на FastAPI <span aria-hidden="true">↗</span></b></div>
   </section>
 </main>
 <footer><span id="counter" aria-live="polite">01 / 05</span><nav aria-label="Слайды"><button class="dot active" aria-label="Заглавный слайд" aria-current="step">01</button><button class="dot" aria-label="Клиент и сервер">02</button><button class="dot" aria-label="HTTP">03</button><button class="dot" aria-label="Состав запроса">04</button><button class="dot" aria-label="Endpoints">05</button></nav><span class="footer-label">PROD / BACKEND</span></footer>
