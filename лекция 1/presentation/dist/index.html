@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PROD — Клиент, сервер и первый endpoint</title>
+  <meta name="description" content="От устройства веб-приложения до первого endpoint. Лекция 1.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><img src="assets/prod.svg" alt="PROD" width="150"><span>БЭКЕНД / ОСНОВЫ ВЕБА</span><span class="lesson">ЛЕКЦИЯ 01</span></header>
+<main>
+  <section class="slide cover" id="slide-1" aria-labelledby="title-1">
+    <div class="eyebrow">ОТ УСТРОЙСТВА ВЕБА К ПЕРВОМУ ЗАПРОСУ</div>
+    <div class="cover-layout">
+      <div><h1 id="title-1">Клиент,<br>сервер<br><em>и первый<br>endpoint.</em></h1><p class="lead">Как действие в интерфейсе<br>превращается в вызов кода.</p></div>
+      <div class="cover-art" aria-label="Схема: клиент отправляет GET-запрос, сервер возвращает 200 OK">
+        <div class="art-window"><div class="window-bar"><i></i><i></i><i></i><span>client</span></div><div class="art-cursor">↗</div><span class="art-label">Запрос начинается здесь</span></div>
+        <div class="wire request-wire"><span>GET /</span><b>→</b></div>
+        <div class="art-server"><span class="tag">SERVER</span><div class="braces">{ }</div><div class="server-lights"><i></i><i></i><i></i></div></div>
+        <div class="wire response-wire"><b>←</b><span>200 OK</span></div>
+      </div>
+    </div>
+    <div class="cover-bottom"><span>01 <b>Устройство приложения</b></span><span>02 <b>HTTP и endpoints</b></span><span>03 <b>Практика на Python</b></span></div>
+  </section>
+  <section class="slide" id="slide-2" aria-labelledby="title-2" hidden>
+    <div class="eyebrow">01 / КЛИЕНТ И СЕРВЕР</div>
+    <h1 id="title-2">Две стороны<br><em>одного приложения.</em></h1>
+    <p class="lead">Клиент показывает интерфейс. Сервер выполняет логику.</p>
+    <div class="architecture">
+      <div class="clients"><div class="tag">КЛИЕНТЫ</div><div class="client-row"><div class="browser-icon" aria-hidden="true"><div>•••</div><span></span><span></span></div><div><h2>Сайт в браузере</h2><p>Веб-интерфейс</p></div></div><div class="client-row"><div class="phone-icon" aria-hidden="true"><i></i><span></span></div><div><h2>Мобильное приложение</h2><p>Интерфейс на телефоне</p></div></div></div>
+      <div class="connection"><div><span>HTTP-запрос</span><b>⟶</b></div><div><b>⟵</b><span>HTTP-ответ</span></div></div>
+      <article class="server-panel"><div class="tag">СЕРВЕР</div><div class="server-heading"><h2>Общая логика<br>и данные</h2><span aria-hidden="true">{ }</span></div><ol><li>Принимает запрос</li><li>Обрабатывает данные</li><li>Возвращает результат</li></ol></article>
+    </div>
+    <p class="takeaway"><span>Главная мысль</span>Разные клиенты могут обращаться к одному серверу.</p>
+  </section>
+  <section class="slide" id="slide-3" aria-labelledby="title-3" hidden>
+    <div class="eyebrow">02 / ЗАПРОС И ОТВЕТ</div>
+    <h1 id="title-3">Общий язык — <em>HTTP.</em></h1>
+    <p class="lead">Протокол задаёт правила обмена сообщениями.</p>
+    <div class="exchange">
+      <article class="message"><div class="message-heading"><span class="step">1</span><h2>Клиент запрашивает</h2><span class="direction">↗</span></div><p class="quote">«Покажи профиль пользователя 42»</p><pre><span class="yellow">GET</span> /users/42 HTTP/1.1
+<span class="muted">Host: api.example.com</span></pre><div class="message-note">Метод + путь → что хотим получить</div></article>
+      <article class="message response"><div class="message-heading"><span class="step">2</span><h2>Сервер отвечает</h2><span class="direction">↙</span></div><p class="quote">«Вот данные этого пользователя»</p><pre>HTTP/1.1 <span class="yellow">200 OK</span>
+<span class="muted">Content-Type: application/json</span>
+
+{ "id": 42, "name": "Аня" }</pre><div class="message-note"><b>200</b> — успех <span>JSON — формат данных</span></div></article>
+    </div>
+    <p class="takeaway"><span>После ответа</span>Клиент превращает полученные данные в интерфейс.</p>
+  </section>
+  <section class="slide" id="slide-4" aria-labelledby="title-4" hidden>
+    <div class="eyebrow">03 / УСТРОЙСТВО HTTP-ЗАПРОСА</div>
+    <h1 id="title-4">Один запрос.<br><em>Четыре составляющие.</em></h1>
+    <div class="request-layout">
+      <div class="request-sheet"><div class="tag">ПРИМЕР / СОЗДАТЬ ПОЛЬЗОВАТЕЛЯ</div><div class="request-address"><span class="method">POST</span><code>https://api.example.com/users</code></div><div class="request-section"><span class="code-label">HEADERS</span><pre>Content-Type: application/json</pre></div><div class="request-section"><span class="code-label">BODY</span><pre>{ "name": "Аня" }</pre></div><div class="sheet-note">Так запрос удобно представить в API-клиенте.</div></div>
+      <div class="parts"><article><b>01</b><div><h2>Метод <small>Method</small></h2><p>Что сделать: GET — получить,<br>POST — отправить данные для обработки.</p></div></article><article><b>02</b><div><h2>Адрес <small>URL</small></h2><p>Куда обратиться: схема, сервер и путь.<br>Здесь путь — <code>/users</code>.</p></div></article><article><b>03</b><div><h2>Заголовки <small>Headers</small></h2><p>Дополнительная информация.<br>Например, формат тела — JSON.</p></div></article><article><b>04</b><div><h2>Тело <small>Body</small></h2><p>Передаваемые данные.<br>В этом примере — имя пользователя.</p></div></article></div>
+    </div>
+    <p class="takeaway"><span>Необязательно</span>У запроса может не быть тела. В URL могут быть параметры: <code>?active=true</code></p>
+  </section>
+  <section class="slide" id="slide-5" aria-labelledby="title-5" hidden>
+    <div class="eyebrow">04 / API И ENDPOINTS</div>
+    <h1 id="title-5">Как запрос<br><em>находит свой код?</em></h1>
+    <p class="lead">Endpoint — точка API, за которой стоит обработчик.</p>
+    <div class="routing">
+      <div class="routes"><div class="tag">МЕТОД + ПУТЬ</div><div class="route"><span class="verb">GET</span><code>/users</code><span>Список</span></div><div class="route selected"><span class="verb">GET</span><code>/users/42</code><span>Профиль</span></div><div class="route"><span class="verb post">POST</span><code>/users</code><span>Создание</span></div></div>
+      <div class="route-link" aria-hidden="true">⟶</div>
+      <article class="handler"><div class="tag">ОБРАБОТЧИК ЗАПРОСА</div><h2>Получить пользователя</h2><p>Найти пользователя с <code>id = 42</code><br>Подготовить данные ответа</p><div class="handler-result"><b>200 OK</b><code>{ "id": 42, "name": "Аня" }</code></div></article>
+    </div>
+    <p class="caption">API — интерфейс взаимодействия программ. Метод и путь определяют нужную операцию.</p>
+    <div class="next"><span>ПЕРЕХОДИМ К ПРАКТИКЕ</span><b>Books App · первый сервер на FastAPI <span aria-hidden="true">↗</span></b></div>
+  </section>
+</main>
+<footer><span id="counter" aria-live="polite">01 / 05</span><nav aria-label="Слайды"><button class="dot active" aria-label="Заглавный слайд" aria-current="step">01</button><button class="dot" aria-label="Клиент и сервер">02</button><button class="dot" aria-label="HTTP">03</button><button class="dot" aria-label="Состав запроса">04</button><button class="dot" aria-label="Endpoints">05</button></nav><span class="footer-label">PROD / BACKEND</span></footer>
+<div class="progress"><div id="progress"></div></div>
+<script src="app.js"></script>
+</body></html>
