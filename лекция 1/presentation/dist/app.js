@@ -39,3 +39,21 @@ async function toggleFullscreen() {
 }
 window.addEventListener('hashchange', readHash);
 readHash();
+
+// OBS browser source follows the private speaker controller on the local server.
+if (new URLSearchParams(location.search).get('obs') === '1') {
+  let polling = false;
+  const sync = async () => {
+    if (polling) return;
+    polling = true;
+    try {
+      const response = await fetch('/presenter-state', {cache: 'no-store'});
+      if (!response.ok) return;
+      const state = await response.json();
+      if (Number.isInteger(state.slide) && state.slide !== current) show(state.slide);
+    } catch { /* Keep the current slide if the controller is unavailable. */ }
+    finally { polling = false; }
+  };
+  sync();
+  setInterval(sync, 300);
+}
