@@ -120,10 +120,10 @@
     <h1 id="title-5">Какие бывают <em>HTTP-методы?</em></h1>
     <p class="lead">Метод сообщает, какое действие ожидает клиент. Выполняет его код бэкенда.</p>
     <div class="method-grid">
-      <article><div><span class="method-verb">GET</span><code>/users/42</code></div><h2>Получить</h2><p>Запросить данные пользователя</p></article>
-      <article><div><span class="method-verb">POST</span><code>/users</code></div><h2>Создать</h2><p>Отправить данные нового пользователя</p></article>
-      <article><div><span class="method-verb">PATCH</span><code>/users/42</code></div><h2>Изменить</h2><p>Обновить часть данных пользователя</p></article>
-      <article><div><span class="method-verb">DELETE</span><code>/users/42</code></div><h2>Удалить</h2><p>Удалить пользователя</p></article>
+      <article><div><span class="method-verb">GET</span><code>/users/42</code></div><h2>Получение данных</h2><p>Запрашивает данные. Не должен изменять состояние сервера.</p></article>
+      <article><div><span class="method-verb">POST</span><code>/users</code></div><h2>Отправка данных</h2><p>Передаёт данные для обработки. Часто используется для создания объекта.</p></article>
+      <article><div><span class="method-verb">PATCH</span><code>/users/42</code></div><h2>Частичное изменение</h2><p>Применяет изменения к существующему объекту.</p></article>
+      <article><div><span class="method-verb">DELETE</span><code>/users/42</code></div><h2>Удаление</h2><p>Запрашивает удаление объекта по указанному адресу.</p></article>
     </div>
   </section>
   <section class="slide" id="slide-6" aria-labelledby="title-6" hidden>
@@ -160,7 +160,7 @@
   </section>
   <section class="slide" id="slide-8" aria-labelledby="title-8" hidden>
     <div class="eyebrow">07 / ОБРАБОТКА ЗАПРОСА</div>
-    <h1 id="title-8">Как запрос<br><em>находит свой код?</em></h1>
+    <h1 id="title-8">Как сервер<br><em> обрабатывает запрос?</em></h1>
     <p class="lead">Endpoint связывает метод и путь с обработчиком.</p>
     <div class="routing">
       <div class="routes"><div class="tag">МЕТОД + ПУТЬ</div><div class="route"><span class="verb">GET</span><code>/users</code><span>Список</span></div><div class="route selected"><span class="verb">GET</span><code>/users/42</code><span>Профиль</span></div><div class="route"><span class="verb post">POST</span><code>/users</code><span>Создание</span></div></div>
